@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewData["Title"] = "ViewBagData";
+}
+
+<h1>ViewBagData</h1>
+
+<h2>@ViewData["Ecode"]</h2>
+<h2>@ViewData["Ename"]</h2>
+<h2>@ViewData["Message"]</h2>
+<h2>@ViewBag.Message</h2>
+
+<h2>@TempData["Country"]</h2>
+<br />
+<h2>Peek Country</h2>
+
+@{
+    if (TempData.Peek("Country") != null)
+    {
+        // Using Peek we can read TempData value and Retain it.
+        <h3>Country: @TempData.Peek("Country")</h3>
+    }
+}
+
+<h2>Keep Country</h2>
+
+@{
+    if (TempData["Country"] != null)
+    {        
+        <h3>Country: @TempData["Country"]</h3>
+    }
+    //...more code....
+    //Using keep we can retain TempData value even after a few lines of code.
+    TempData.Keep("Country");
+}
+
+<form asp-controller="Default" asp-action="ViewBagData" method="post">
+
+    <input type="submit" />
+</form>

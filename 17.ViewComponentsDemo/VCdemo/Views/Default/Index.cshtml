@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+@section Summary{
+    <div class="bg-info text-white m-2 p-2">
+        @await Component.InvokeAsync("EmployeeSummary",new { salary=45000 })
+    </div>
+    <div class="bg-info text-white m-2 p-2">
+        <vc:employee-summary salary="45000" />
+    </div>
+}

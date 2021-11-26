@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewData["Title"] = "bValidator";
+}
+
+<h1>bValidator</h1>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/bvalidator/jquery.bvalidator.js"></script>
+
+<script src="~/bvalidator/themes/presenters/bs3form.min.js"></script>
+<script src="~/bvalidator/themes/bs3/bs3form/bs3form.js"></script>
+<link href="~/bvalidator/bValidator2.css" rel="stylesheet" />
+<link href="~/css/StyleSheet.css" rel="stylesheet" />
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('form').bValidator();
+    });
+</script>
+<style>
+    .help-block div{
+        color:red;
+    }
+</style>
+
+<div class="container">
+    <form asp-action="bvalidator" data-bvalidator-validate data-bvalidator-theme="bs3form">
+
+        <div class="form-group">
+            <label class="control-label">First name</label>
+            <input id="txtfn" type="text" value="" class="form-control" data-bvalidator="required,alpha" />
+        </div>
+        <div class="form-group">
+            <label class="control-label">Email</label>
+            <input id="txtemail" type="text" value="" class="form-control" data-bvalidator="required,email" />
+        </div>
+        <div class="form-group">
+            <label class="control-label">Mobile</label>
+            <input id="txtmob" type="text" value="" class="form-control" data-bvalidator="required,number,rangelen[10:10]" />
+        </div>
+
+        <div class="form-group">
+            <label class="control-label">Hobbies</label><br />
+
+            Playing <input name="b[]" value="1" type="checkbox">
+            Listening <input name="b[]" value="1" type="checkbox">
+            Reading <input name="b[]" value="1" data-bvalidator="min[2],required" data-bvalidator-msg="Select at least two checkboxes" type="checkbox">
+
+        </div>
+
+        <div class="form-group">
+            <label class="control-label">City</label>
+            <select class="form-control" data-bvalidator="required">
+                <option value="">--Select City--</option>
+                <option value="1">Surat</option>
+                <option value="2">Vadodara</option>
+                <option value="3">Gandhinagar</option>
+                <option value="4">Rajkot</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label"></label>
+            <input id="Submit1" type="submit" value="submit" class="btn btn-info" />
+            <input id="reset1" type="reset" value="Reset" class="btn btn-danger" />
+        </div>
+    </form>
+</div>
+

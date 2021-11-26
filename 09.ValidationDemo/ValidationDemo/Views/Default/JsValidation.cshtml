@@ -1,0 +1,104 @@
+﻿
+@{
+    ViewData["Title"] = "JsValidation";
+}
+
+<script>
+    function formValidation() {
+        var fname = document.getElementById("txtfn").value;
+        if (fname == "") {
+            alert("Fname is Required..!!");
+            return false;
+        }
+        var expr = /^[a-zA-Z]+$/;
+        if (expr.test(fname) == false) {
+            alert("Alphabets only..");
+            return false;
+        }
+
+        var mobile = document.getElementById("txtmob").value;
+        if (mobile == "") {
+            alert("Mobile no is Required..!!");
+            return false;
+        }
+        var expr = /^[9876]\d{9}$/;
+        if (expr.test(mobile) == false) {
+            alert("invalid mobile no..!!");
+            return false;
+        }
+
+        var email = document.getElementById("txtemail").value;
+        if (email == "") {
+            alert("email is Required..!!");
+            return false;
+        }
+        var expr = /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/;
+        if (expr.test(email) == false) {
+            alert("invalid email..!!");
+            return false;
+        }
+
+        var age = document.getElementById("txtage").value;
+        if (age < 25) {
+            alert("Under age..!!");
+            return false;
+        }
+
+        var pass = document.getElementById("txtpass").value;
+        if (pass == "") {
+            alert("Password is Required..!!");
+            return false;
+        }
+        var expr = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@@#$%^&*()_+])[A-Za-z\d][A-Za-z\d!@@#$%^&*()_+]{7,19}$/;
+        if (expr.test(pass) == false) {
+            alert("Password is weak..!!");
+            return false;
+        }
+
+        var cnfpass = document.getElementById("txtcnf").value;
+        if (cnfpass != pass) {
+            alert("Passwords Mismatch..!!");
+            return false;
+        }
+
+        return true;
+    }
+</script>
+
+<h1>JavaScript Validations</h1>
+<br />
+@using (Html.BeginForm())
+{
+    <div class="container">
+        <div class="form-group">
+            <label>First Name</label>
+            <input id="txtfn" type="text" value="" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Mobile</label>
+            <input id="txtmob" type="text" value="" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input id="txtemail" type="text" value="" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Age</label>
+            <input id="txtage" type="text" value="" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input id="txtpass" type="text" value="" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Cnf Password</label>
+            <input id="txtcnf" type="text" value="" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label> </label>
+            <input type="submit" value="Submit" onclick="return formValidation();" class="btn btn-success" />
+        </div>
+    </div>
+}
+
+

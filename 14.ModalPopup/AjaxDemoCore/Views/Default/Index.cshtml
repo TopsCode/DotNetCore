@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            url: "/Default/GetEmployees",
+            type: "GET",
+            dataType: "json",
+            success: function (empdata) {
+                console.log(empdata);
+                $.each(empdata, function (key, item) {
+                    $("#tbl").append("<tr>"
+                        + "<td>" + item.empId + "</td>"
+                        + "<td>" + item.fName + "</td>"
+                        + "<td>" + item.salary + "</td>"
+                        + "<td>" + item.mobile + "</td>"
+                        + "<td>" + item.email + "</td>"
+                        + "<td>" + item.address + "</td>"
+                        + "<td>"
+                        + "<a href='/Default/EditEmp/" + item.emp_id + "'>Edit</a> | "
+                        + "<a href='/Default/EmpDetails/" + item.emp_id + "'>Details</a> | "
+                        + "<a href='/Default/DeleteEmp/" + item.emp_id + "'>Delete</a>"
+                        + "</td>"
+                        + "</tr>");
+                });
+            }
+        });
+    });
+</script>
+
+<h1>Index</h1>
+<p>
+    <a href="/Default/AddEmp">Create New</a>
+</p>
+<table id="tbl" class="table">
+    <tr>
+        <th>Employee ID</th>
+        <th>First Name</th>
+        <th>Salary</th>
+        <th>Mobile</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th></th>
+    </tr>
+</table>

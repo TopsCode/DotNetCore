@@ -1,0 +1,13 @@
+﻿
+@using Microsoft.AspNetCore.Http;
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+    ViewData["Title"] = "SessionObjectData";
+}
+
+<h1>Session Object Data</h1>
+
+<h3>@HttpContextAccessor.HttpContext.Session.GetString("Myusername")</h3>
+<h3>Session id is @HttpContextAccessor.HttpContext.Session.Id</h3>
+
+
