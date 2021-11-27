@@ -6278,11 +6278,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\DotNet Core\\04.DependencyInjectionDemo\\DependencyInjectionDemo\\DependencyInjectionDemo.csproj",
+      "projectUniqueName": "D:\\DotNet Core\\05.DependencyInjectionDemo\\DependencyInjectionDemo\\DependencyInjectionDemo.csproj",
       "projectName": "DependencyInjectionDemo",
-      "projectPath": "D:\\DotNet Core\\04.DependencyInjectionDemo\\DependencyInjectionDemo\\DependencyInjectionDemo.csproj",
+      "projectPath": "D:\\DotNet Core\\05.DependencyInjectionDemo\\DependencyInjectionDemo\\DependencyInjectionDemo.csproj",
       "packagesPath": "C:\\Users\\AnkitPC\\.nuget\\packages\\",
-      "outputPath": "D:\\DotNet Core\\04.DependencyInjectionDemo\\DependencyInjectionDemo\\obj\\",
+      "outputPath": "D:\\DotNet Core\\05.DependencyInjectionDemo\\DependencyInjectionDemo\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
